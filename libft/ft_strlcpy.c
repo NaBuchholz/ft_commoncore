@@ -6,7 +6,7 @@
 /*   By: nbuchhol <nbuchhol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 13:56:57 by nbuchhol          #+#    #+#             */
-/*   Updated: 2024/10/15 17:15:58 by nbuchhol         ###   ########.fr       */
+/*   Updated: 2024/10/16 19:27:47 by nbuchhol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	len = ft_strlen(src);
 	if (size == 0)
 		return (len);
-	while (src[count] && count < size)
+	while (src[count] && count < size - 1)
 	{
 		dst[count] = src[count];
 		count++;
