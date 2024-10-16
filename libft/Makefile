@@ -6,12 +6,12 @@
 #    By: nbuchhol <nbuchhol@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/11 09:23:03 by nbuchhol          #+#    #+#              #
-#    Updated: 2024/10/15 13:46:29 by nbuchhol         ###   ########.fr        #
+#    Updated: 2024/10/16 13:59:57 by nbuchhol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= libft
-CC = cc
+NAME = libft.a
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 SRC = ft_isalnum.c \
 	  ft_isalpha.c \
@@ -21,24 +21,28 @@ SRC = ft_isalnum.c \
 	  ft_strlen.c \
 	  ft_tolower.c \
 	  ft_toupper.c \
-	  ft_strlcpy.c
+	  ft_strlcpy.c \
+	  ft_memset.c \
+	  ft_memcpy.c \
+	  ft_strlcat.c \
+
 OBJ = ${SRC:.c=.o}
 RM = rm -f
 
-all: ${NAME}.a
+all: ${NAME}
 
-${NAME}.a: ${OBJ}
-	ar rcs ${NAME}.a ${OBJ}
+${NAME}: ${OBJ}
+	ar rcs ${NAME} ${OBJ}
 
 %.o: %.c
-	@${CC} ${CFLAGS} -c $< -o $@
+	@${CC} ${CFLAGS} -c $^ -o $@
 
 clean:
 	${RM} ${OBJ}
 
 fclean: clean
-	${RM} ${NAME}.a ${TEST}
+	${RM} ${NAME}
 
 re: fclean all
 
-.PHONY =  all clean fclean re
+.PHONY = all clean fclean re
