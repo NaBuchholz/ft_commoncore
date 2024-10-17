@@ -6,7 +6,7 @@
 #    By: nbuchhol <nbuchhol@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/11 09:23:03 by nbuchhol          #+#    #+#              #
-#    Updated: 2024/10/16 17:12:34 by nbuchhol         ###   ########.fr        #
+#    Updated: 2024/10/16 23:33:48 by nbuchhol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,10 @@ SRC = ft_isalnum.c \
 	  ft_memcpy.c \
 	  ft_strlcat.c \
 	  ft_bzero.c \
-	  ft_memmove.c
+	  ft_memmove.c \
+	  ft_strchr.c \
+	  ft_strrchr.c \
+	  ft_strncmp.c
 
 OBJ = ${SRC:.c=.o}
 RM = rm -f
