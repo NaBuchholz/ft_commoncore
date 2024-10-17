@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbuchhol <nbuchhol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 21:40:19 by nbuchhol          #+#    #+#             */
-/*   Updated: 2024/10/17 01:51:49 by nbuchhol         ###   ########.fr       */
+/*   Created: 2024/10/17 03:31:08 by nbuchhol          #+#    #+#             */
+/*   Updated: 2024/10/17 03:46:56 by nbuchhol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	len_s;
+	unsigned char	*temp_s1;
+	unsigned char	*temp_s2;
+	size_t			count;
 
-	len_s = ft_strlen(s);
-	if ((char)c == '\0')
-		return ((char *)s + len_s);
-	while (len_s > 0)
+	count = 0;
+	temp_s1 = (unsigned char *)s1;
+	temp_s2 = (unsigned char *)s2;
+	if (n == 0)
+		return (0);
+	while (count < n)
 	{
-		if (s[len_s - 1] == (char) c)
-			return ((char *)s + len_s - 1);
-		len_s--;
+		if (temp_s1[count] != temp_s2[count])
+			return (temp_s1[count] - temp_s2[count]);
+		count++;
 	}
-	return (NULL);
+	return (0);
 }
