@@ -6,20 +6,33 @@
 /*   By: nbuchhol <nbuchhol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 03:53:11 by nbuchhol          #+#    #+#             */
-/*   Updated: 2024/10/17 06:28:56 by nbuchhol         ###   ########.fr       */
+/*   Updated: 2024/10/17 09:30:11 by nbuchhol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	count;
-	size_t	len_little;
+	size_t i;
+	size_t j;
 
-	len_little = ft_strlen(little);
-	count = 0;
-
+	i = 0;
+	j = 0;
+	if (needle[0] == 0)
+		return ((char *) haystack);
+	while (haystack[i] && i < len)
+	{
+		while (haystack[i + j] == needle[j] && haystack[i + j] && i + j < len)
+		{
+			j++;
+			if (needle[j] == 0)
+				return ((char *) haystack + i);
+		}
+		i++;
+		j = 0;
+	}
+	return (0);
 }
 
 // TODO NÃO FUNCIONA
