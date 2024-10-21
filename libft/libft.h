@@ -6,13 +6,13 @@
 /*   By: nbuchhol <nbuchhol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 10:36:14 by nbuchhol          #+#    #+#             */
-/*   Updated: 2024/10/21 12:20:26 by nbuchhol         ###   ########.fr       */
+/*   Updated: 2024/10/21 14:33:00 by nbuchhol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <stddef.h>
+# include <stdlib.h>
 
 int		ft_isdigit(int c);
 int		ft_isalpha(int c);
@@ -36,5 +36,6 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
+char	*ft_strdup(const char *s1);
 
 #endif // END IF LIBFT_H
