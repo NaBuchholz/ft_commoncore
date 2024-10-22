@@ -6,7 +6,7 @@
 /*   By: nbuchhol <nbuchhol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 10:36:14 by nbuchhol          #+#    #+#             */
-/*   Updated: 2024/10/21 18:18:44 by nbuchhol         ###   ########.fr       */
+/*   Updated: 2024/10/22 11:31:07 by nbuchhol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 char	*ft_substr(char const *src, unsigned int start, size_t len);
 char	*ft_strjoin(char const *prefix_str, char const *sulffix_str);
-
+char	*ft_strtrim(char const *s1, char const *set);
 #endif // END IF LIBFT_H
