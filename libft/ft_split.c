@@ -6,29 +6,43 @@
 /*   By: nbuchhol <nbuchhol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:26:44 by nbuchhol          #+#    #+#             */
-/*   Updated: 2024/10/22 17:44:09 by nbuchhol         ###   ########.fr       */
+/*   Updated: 2024/10/24 18:14:04 by nbuchhol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	count_words(char const *s, char c)
+static int	count_words(const char *s, char c)
 {
-	size_t	count;
-	char	*temp_str;
+	int	count;
+	int	in_word;
 
 	count = 0;
-	temp_str = (char *)s;
-	while (*temp_str)
+	in_word = 0;
+	while (*s)
 	{
-		while (*temp_str == c)
-			temp_str++;
-		if (*temp_str)
+		if (*s != c && !in_word)
+		{
+			in_word = 1;
 			count++;
-		while (*temp_str && *temp_str != c)
-			temp_str++;
+		}
+		else if (*s == c)
+			in_word = 0;
+		s++;
 	}
 	return (count);
+}
+
+static char	*word_dup(const char *start, size_t len)
+{
+	char	*word;
+
+	word = (char *)malloc(len + 1);
+	if (!word)
+		return (NULL);
+	ft_strlcpy(word, start, len + 1);
+	word[len] = '\0';
+	return (word);
 }
 
 static void	fill_words_array(char **arr, char const *s, char c)
@@ -48,7 +62,7 @@ static void	fill_words_array(char **arr, char const *s, char c)
 			temp_s++;
 		if (temp_s - s > start)
 		{
-			arr[count] = ft_substr(s, start, (size_t)(temp_s - s - start));
+			arr[count] = word_dup(s + start, (size_t)(temp_s - s - start));
 			count++;
 		}
 	}
@@ -56,17 +70,16 @@ static void	fill_words_array(char **arr, char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	char		**words_array;
-	size_t		count;
+	char	**words_array;
+	size_t	count;
 
-	if (s == NULL)
+	if (!s)
 		return (NULL);
 	count = count_words(s, c);
-	words_array = (char **)malloc((count + 1) * (sizeof(char *)));
+	words_array = (char **)malloc((count + 1) * sizeof(char *));
 	if (!words_array)
 		return (NULL);
 	fill_words_array(words_array, s, c);
-	if (!words_array)
-		return (NULL);
+	words_array[count] = NULL;
 	return (words_array);
 }
