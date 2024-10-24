@@ -6,7 +6,7 @@
 /*   By: nbuchhol <nbuchhol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 22:29:00 by nbuchhol          #+#    #+#             */
-/*   Updated: 2024/10/23 23:03:37 by nbuchhol         ###   ########.fr       */
+/*   Updated: 2024/10/24 11:42:36 by nbuchhol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	int	digit;
 
+	if (fd < 0)
+		return ;
 	if (n == -2147483648)
 		write(fd, "-2147483648", 11);
 	else if (n < 0)
