@@ -7,3 +7,11 @@ This repository contains source codes for 42 commoncore projects, as well as som
 ## How to use?
 
 Feel free to explore the repository and use how, remember to first understand what you are seeing, especially the program configuration files. And always make a backup of your previous settings.
+
+## More Details
+
+For more details on each project, you can visit the following links in the wiki section:
+
+- [Libft](https://github.com/NaBuchholz/ft_commoncore/wiki/Libft)
+- [Get Next Line](https://github.com/NaBuchholz/ft_commoncore/wiki/GNL)
+- [Printf](https://github.com/NaBuchholz/ft_commoncore/wiki/Printf)
