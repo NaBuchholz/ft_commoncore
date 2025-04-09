@@ -8,22 +8,39 @@
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "readme" ,
     "files.autoSave": "onFocusChange",
+    "editor.bracketPairColorization.enabled": true,  // Helps identify key pairs
 
     // terminal customizations
     "terminal.explorerKind": "both",
     "terminal.sourceControlRepositoriesKind": "both",
     "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono",
     "terminal.integrated.defaultProfile.linux": "fish",
+    "terminal.integrated.profiles.linux": {
+        "fish": {
+            "path": "/usr/bin/fish",
+            "args": []
+        }
+    },
     "terminal.integrated.fontSize": 16,
   
     // 42 implements
     "42header.username": "your-login",
     "42header.email": "your-login@student.42.fr",
-    "editor.rulers": [80],
+    "editor.rulers": [80], // Norme: line limit
     "editor.renderWhitespace": "all",
 	"editor.insertSpaces": false,
 	"editor.tabSize": 4,
 	"editor.detectIndentation": false,
+    "files.trimTrailingWhitespace": true, // Norm: cannot have spaces at the end of the line
+    "files.associations": {
+        "*.h": "c"
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/*.o": true,
+        "**/*.a": true
+    },
   
     // cursor fancy implements
     "editor.cursorBlinking": "smooth",
