@@ -1,0 +1,76 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Debug Current Project",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/${workspaceFolderBasename}",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				}
+			],
+			"preLaunchTask": "build",
+			"miDebuggerPath": "/usr/bin/gdb"
+		},
+		{
+			"name": "Debug with Arguments",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/${workspaceFolderBasename}",
+			"args": "${command:pickStringRemember}",
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				}
+			],
+			"preLaunchTask": "build",
+			"miDebuggerPath": "/usr/bin/gdb"
+		},
+		{
+			"name": "Debug Custom Executable",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/${input:executableName}",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				}
+			],
+			"preLaunchTask": "build",
+			"miDebuggerPath": "/usr/bin/gdb"
+		}
+	],
+	"inputs": [
+		{
+			"id": "executableName",
+			"type": "promptString",
+			"description": "Name of the executable to debug",
+			"default": "${workspaceFolderBasename}"
+		}
+	]
+}

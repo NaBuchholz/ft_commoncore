@@ -1,0 +1,16 @@
+{
+	"recommendations": [
+		"ms-vscode.cpptools",
+		"ms-vscode.cpptools-themes",
+		"ms-vscode.cpptools-extension-pack",
+		"twxs.cmake",
+		"ms-vscode.makefile-tools",
+		"keyhr.42-c-format",
+		"matepek.vscode-catch2-test-adapter",
+		"jeff-hykin.better-c-syntax",
+		"amiralizadeh9480.cpp-helper",
+		"vadimcn.vscode-lldb",
+		"DoKca.42-ft-count-line",
+		"MariusvanWijk-JoppeKoers.codam-norminette-3"
+	]
+}
