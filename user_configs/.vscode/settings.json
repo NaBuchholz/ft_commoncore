@@ -35,6 +35,11 @@
 	"files.associations": {
 		"*.h": "c"
 	},
+	"[c]": {
+        "editor.defaultFormatter": "keyhr.42-c-format",
+		"editor.formatOnSave": true,
+		"editor.formatOnSaveMode": "modificationsIfAvailable",
+    },
 	"files.exclude": {
 		"**/.git": true,
 		"**/.DS_Store": true,
