@@ -40,6 +40,7 @@
 		"editor.formatOnSave": true,
 		"editor.formatOnSaveMode": "modificationsIfAvailable",
     },
+	//As configurações abaixo são para os aquivos dos tipos abaixo não aparecerem na interface do vscode, caso deseje ve-los remova esta parte.
 	"files.exclude": {
 		"**/.git": true,
 		"**/.DS_Store": true,
